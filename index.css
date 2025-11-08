@@ -299,3 +299,11 @@ footer {
     text-align: center;
     padding: 1rem 0;
 }
+
+@media (max-width: 768px) {
+
+    header .menu li {
+        display: block;
+        margin: 0.5rem 0;
+    }
+}

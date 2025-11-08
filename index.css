@@ -1,0 +1,301 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #091729;
+    color: #fff;
+    padding: 5px 20px;
+}
+
+main {
+    background-color: #0E1C2E;
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+}
+
+.navbar h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    display: inline;
+    margin-left: 1rem;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.inicio {
+    background-image: url('https://cdn.discordapp.com/attachments/1319455795296993373/1401126128743088208/minecraft_landscape.png?ex=690db3e4&is=690c6264&hm=692f0aa9647f475617c54be9fa371bd44837059140d3012619d23989f4148164&');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    padding: 10rem 2rem;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.inicio h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.inicio p {
+    margin: 0.2rem 0;
+    text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+.inicio .discord-btn {
+    margin-top: 2rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #5865F2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.inicio .discord-btn:hover {
+    background-color: #7983F5;
+}
+
+.nosotros-seccion {
+    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    padding: 2rem 1rem;
+    background-color: #0E1C2E;
+    color: #fff;
+    text-align: center;
+}
+
+.nosotros-seccion h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #6E11B0;
+}
+
+.nosotros-seccion p {
+    max-width: 700px;
+    margin: 0 auto 3rem auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+.equipo {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.miembro {
+    background-color: #F5F5F51A;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.miembro:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.miembro img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.miembro h4 {
+    margin: 0.5rem 0;
+    color: #E0E0E0;
+}
+
+.miembro p {
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.caracteristicas-seccion {
+    background-color: #0E1C2E;
+    padding: 2rem 1rem;
+    color: #fff;
+    text-align: center;
+}
+
+.caracteristicas-seccion h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #6E11B0;
+}
+
+.caracteristicas-seccion p {
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    font-size: 1.1rem;
+    color: #ddd;
+}
+
+.caracteristicas {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    padding: 2rem;
+}
+
+.caracteristica {
+    background-color: #F5F5F51A;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.caracteristica:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.caracteristica h4 {
+    margin: 0.5rem 0;
+    color: #E0E0E0;
+}
+
+.caracteristica p {
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.ip-seccion {
+    background-color: #0E1C2E;
+    padding: 2rem 1rem;
+    color: #fff;
+    text-align: center;
+}
+
+.ip-seccion h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #6E11B0;
+}
+
+.ip-seccion p {
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    font-size: 1.1rem;
+    color: #ddd;
+}
+
+.ip-contenedor {
+    display: flex;
+    padding: 0.5rem;
+    justify-content: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.ip-contenedor div {
+    background-color: #F5F5F51A;
+    padding: 1.5rem 2rem;
+    border: 1px solid #ccc;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 10px;
+    width: 250px;
+    transition: transform 0.3s;
+}
+
+.ip-contenedor div:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.ip-contenedor div h4 {
+    margin: 0.5rem 0;
+    color: #E0E0E0;
+}
+
+.ip-contenedor div p {
+    color: #ccc;
+    font-size: 1rem;
+}
+
+.faq-seccion {
+    background-color: #0E1C2E;
+    padding: 2rem 1rem;
+    color: #fff;
+    text-align: center;
+}
+
+.faq-seccion h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #6E11B0;
+}
+
+.faq {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.faq .pregunta {
+    background-color: #F5F5F51A;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    transition: background-color 0.3s;
+}
+
+.faq .pregunta:hover {
+    background-color: #6E11B02E;
+}
+
+.faq .pregunta h4 {
+    margin: 0;
+    text-align: center;
+    color: #E0E0E0;
+}
+
+.faq .pregunta p {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    text-align: center;
+    color: #ccc;
+}
+
+.highlight {
+    color: #6E11B0;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #091729;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}

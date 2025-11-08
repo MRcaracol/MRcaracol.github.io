@@ -44,7 +44,7 @@ main {
 }
 
 .inicio {
-    background-image: url('https://cdn.discordapp.com/attachments/1319455795296993373/1401126128743088208/minecraft_landscape.png?ex=690db3e4&is=690c6264&hm=692f0aa9647f475617c54be9fa371bd44837059140d3012619d23989f4148164&');
+    background-image: url("./img/index-fondo.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

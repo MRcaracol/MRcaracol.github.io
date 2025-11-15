@@ -10,18 +10,6 @@ header {
     padding: 5px 20px;
 }
 
-/* Animación para el texto de bienvenida */
-@keyframes fadeUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 main {
     background-color: #0E1C2E;
 }
@@ -66,6 +54,18 @@ main {
     border-radius: 10px;
 }
 
+/* Animación para el texto de bienvenida */
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .inicio h2 {
     font-size: 3rem;
     margin-bottom: 1rem;
@@ -102,9 +102,17 @@ main {
     background-color: #7983F5;
 }
 
+/* Animación de pulso para el botón de Discord al pasar el cursor */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
 /* Animación para el botón de Discord en la sección de inicio */
 .inicio .discord-btn {
-    animation: fadeUp 2.2s ease-out forwards;
+    animation: fadeUp 2.2s ease-out forwards; /* Agregar animación al botón */
+    animation: pulse 2.5s infinite ease-in-out; /* Agregar animación de pulso */
 }
 
 .nosotros-seccion {

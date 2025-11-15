@@ -137,21 +137,21 @@
     </footer>
 
     <script>
-    document.querySelectorAll(".faq-btn").forEach(btn => {
-        btn.addEventListener("click", () => {
-            const content = btn.nextElementSibling;
+        document.querySelectorAll(".faq-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const content = btn.nextElementSibling;
 
-            btn.classList.toggle("active");
+                btn.classList.toggle("active");
 
-            if (btn.classList.contains("active")) {
-                content.style.maxHeight = content.scrollHeight + "px";
-                content.style.padding = "1rem";
-            } else {
-                content.style.maxHeight = "0";
-                content.style.padding = "0 1rem";
-            }
+                if (btn.classList.contains("active")) {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    content.style.padding = "1rem";
+                } else {
+                    content.style.maxHeight = "0";
+                    content.style.padding = "0 1rem";
+                }
+            });
         });
-    });
     </script>
 </body>
 </html>

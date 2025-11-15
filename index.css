@@ -69,6 +69,7 @@ main {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     color: #fff;
     padding: 10rem 2rem;
     text-align: center;

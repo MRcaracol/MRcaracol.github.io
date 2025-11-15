@@ -41,6 +41,27 @@ main {
 .menu a {
     color: #fff;
     text-decoration: none;
+    position: relative;
+    transition: color 0.25s ease;
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background-color: #6E11B0;
+    transition: width 0.3s ease;
+}
+
+.menu a:hover {
+    color: #B36AFF;
+}
+
+.menu a:hover::after {
+    width: 100%;
 }
 
 .inicio {

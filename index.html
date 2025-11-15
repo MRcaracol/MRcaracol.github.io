@@ -103,30 +103,55 @@
         </div>
     </section>
 
-    <section class="faq-seccion">
-        <div class="contenedor">
-            <h3>Preguntas Frecuentes</h3>
-            <div class="faq">
-                <div class="pregunta">
-                    <h4>¿Cómo puedo unirme al servidor?</h4>
-                    <p>Puedes unirte al servidor utilizando la dirección IP proporcionada en nuestro sitio web.</p>
-                </div>
-                <div class="pregunta">
-                    <h4>¿Qué versiones de Minecraft son compatibles?</h4>
-                    <p>Nuestro servidor es compatible con Minecraft Java y Bedrock.</p>
-                </div>
-                <div class="pregunta">
-                    <h4>¿Hay reglas específicas para los jugadores?</h4>
-                    <p>Sí, tenemos un conjunto de reglas para garantizar una experiencia agradable para todos. Puedes encontrarlas en nuestro sitio web.</p>
-                </div>
+    <section class="faq">
+        <div class="pregunta">
+            <button class="faq-btn">
+                ¿Cómo puedo unirme al servidor?
+            </button>
+            <div class="faq-content">
+                <p>Puedes unirte al servidor utilizando la dirección IP proporcionada en nuestro sitio web.</p>
+            </div>
+        </div>
+        <div class="pregunta">
+            <button class="faq-btn">
+                ¿Qué versiones de Minecraft son compatibles?
+            </button>
+            <div class="faq-content">
+                <p>Nuestro servidor es compatible con Minecraft Java y Bedrock.</p>
+            </div>
+        </div>
+        <div class="pregunta">
+            <button class="faq-btn">
+                ¿Hay reglas específicas para los jugadores?
+            </button>
+            <div class="faq-content">
+                <p>Sí, tenemos reglas para garantizar una experiencia agradable para todos. Próximamente en la web.</p>
             </div>
         </div>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 novacraft</p>
-    <p>Made by ObsiTech</p>
-  </footer>
+    <footer>
+        <p>&copy; 2025 novacraft</p>
+        <p>Made by ObsiTech</p>
+    </footer>
+
+    <script>
+    document.querySelectorAll(".faq-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const content = btn.nextElementSibling;
+
+            btn.classList.toggle("active");
+
+            if (btn.classList.contains("active")) {
+                content.style.maxHeight = content.scrollHeight + "px";
+                content.style.padding = "1rem";
+            } else {
+                content.style.maxHeight = "0";
+                content.style.padding = "0 1rem";
+            }
+        });
+    });
+    </script>
 </body>
 </html>

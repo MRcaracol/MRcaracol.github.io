@@ -324,48 +324,63 @@ main {
     font-size: 1rem;
 }
 
-.faq-seccion {
-    background-color: #0E1C2E;
-    padding: 2rem 1rem;
-    color: #fff;
-    text-align: center;
-}
-
-.faq-seccion h3 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    color: #6E11B0;
-}
+/* --- FAQ Estilo Minecraft Pixel --- */
 
 .faq {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: left;
+    background-color: #0E1C2E;
+    padding: 2rem 1rem;
 }
 
-.faq .pregunta {
+/* --- FAQ Acordeón --- */
+
+.faq-btn {
+    width: 100%;
     background-color: #F5F5F51A;
+    border: none;
     padding: 1rem;
     border-radius: 10px;
-    margin-bottom: 1rem;
-    transition: background-color 0.3s;
+    color: #E0E0E0;
+    text-align: left;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
 }
 
-.faq .pregunta:hover {
+.faq-btn::after {
+    content: "+";
+    position: absolute;
+    right: 20px;
+    font-size: 1.4rem;
+    transition: transform 0.3s ease;
+}
+
+.faq-btn.active::after {
+    transform: rotate(45deg);
+}
+
+.faq-btn:hover {
     background-color: #6E11B02E;
 }
 
-.faq .pregunta h4 {
-    margin: 0;
-    text-align: center;
-    color: #E0E0E0;
+.faq-content {
+    max-height: 0;
+    overflow: hidden;
+    background-color: #00000020;
+    border-radius: 0 0 10px 10px;
+    padding: 0 1rem;
+    transition: max-height 0.35s ease, padding 0.3s ease;
 }
 
-.faq .pregunta p {
-    margin-top: 0.5rem;
-    font-size: 0.95rem;
-    text-align: center;
+.faq-content p {
     color: #ccc;
+    margin: 1rem 0;
+    font-size: 0.95rem;
+}
+
+/* Opcional: separar cada pregunta */
+.pregunta {
+    margin-bottom: 1rem;
 }
 
 .highlight {

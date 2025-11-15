@@ -44,7 +44,7 @@ main {
 }
 
 .inicio {
-    background-image: url('https://cdn.discordapp.com/attachments/1319455795296993373/1401126128743088208/minecraft_landscape.png?ex=690db3e4&is=690c6264&hm=692f0aa9647f475617c54be9fa371bd44837059140d3012619d23989f4148164&');
+    background-image: url("img/index-fondo.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -298,4 +298,48 @@ footer {
     color: #fff;
     text-align: center;
     padding: 1rem 0;
+}
+
+/* evitar que el H1 se superponga en móviles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .navbar h1 {
+    position: static;
+    transform: none;
+    left: auto;
+    margin: 0;
+    font-size: 1.25rem;
+    text-align: center;
+  }
+
+  .menu {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .menu li {
+    display: inline-block;
+    margin-left: 0;
+  }
+}
+
+/* Ajustes adicionales para pantallas muy pequeñas */
+@media (max-width: 420px) {
+  .inicio {
+    padding: 6rem 1rem;
+  }
+  .navbar h1 {
+    font-size: 1rem;
+  }
+  .menu {
+    gap: 0.6rem;
+    font-size: 0.95rem;
+  }
 }

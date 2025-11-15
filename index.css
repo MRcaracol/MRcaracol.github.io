@@ -158,11 +158,19 @@ main {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Animación de flotación para los miembros del equipo */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0); }
+}
+
 .miembro img {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite; /* Agregar animación de flotación */
 }
 
 .miembro h4 {

@@ -1,157 +1,218 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Novacraft MC</title>
-  <link rel="stylesheet" href="index.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Universe Hub — Servicios & Reclutamiento</title>
+    <meta name="description" content="Universe Hub: Servicios profesionales, reclutamiento, diseño, programación, marketing y más.">
+    <meta property="og:title" content="Universe Hub">
+    <meta property="og:description" content="Servicios profesionales y reclutamiento en un solo lugar.">
+    <meta property="og:image" content="https://i.imgur.com/7kQx0wT.png">
+    <meta name="theme-color" content="#0b0b0b">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="index.css">
+
+    <!-- GSAP -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
+
 <body>
-  <header>
-    <nav class="navbar">
-      <h1>NOVACRAFT MC</h1>
-      <ul class="menu">
-        <li><a href="descubre.html">Descubre</a></li>
-        <li><a href="#">Tienda</a></li>
-        <li><a href="perfil.html">Perfil</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-    <!-- Seccion de bienvenida -->
-    <section class="inicio">
-        <h2>Bienvenido a <span class="highlight">Novacraft</span></h2>
-        <p>Una Network con comunidad activa y eventos semanales</p>
-        <p>Minecraft Java y Bedrock</p>
-        <a href="https://discord.gg/fMkvrjTY57">
-            <button class="discord-btn">Grupo de Discord</button>
-        </a>
-    </section>
+    <a href="#main" class="skip">Saltar al contenido</a>
 
-    <!-- Seccion breve descripcion y tarjetas del equipo de alto mando -->
-    <section class="nosotros-seccion">
-        <div class="contenedor">
-            <h3>Sobre Nosotros</h3>
-            <p>
-                <strong>Novacraft</strong>, un servidor de Minecraft creado para ofrecer la mejor experiencia a nuestra comunidad. Aquí encontrarás un mundo lleno de aventuras, eventos semanales y una comunidad amigable lista para ayudarte en cada paso
-            </p>
-            <!-- Tarjetas del equipo de alto mando -->
-            <div class="equipo">
-                <!-- Miembro 1 -->
-                <div class="miembro">
-                    <img src="Img/Dueño.jpg" alt="Dueño" />
-                    <h4>Dueño</h4>
-                    <p>Fundador y Administrador Principal</p>
-                </div>
-                <!-- Miembro 2 -->
-                <div class="miembro">
-                    <img src="Img/Sub-Dueño.jpg" alt="Sub-Dueño" />
-                    <h4>Sub-Dueño</h4>
-                    <p>Sub-Dueño y Administrador</p>
-                </div>
-                <!-- Miembro 3 -->
-                <div class="miembro">
-                    <img src="Img/Administrador.jpg" alt="Administrador" />
-                    <h4>Administrador</h4>
-                    <p>Encargado de la gestión del servidor</p>
-                </div>
-            </div>
+    <!-- Partículas -->
+    <canvas id="particles" aria-hidden="true"></canvas>
+
+    <!-- NAVBAR -->
+    <header class="navbar" role="banner">
+        <div class="nav-left">
+            <div class="nav-logo">Universe Hub</div>
         </div>
-    </section>
 
-    <section class="caracteristicas-seccion">
-        <div class="contenedor">
-            <h3>Características Principales</h3>
-            <p>Descubre las características que hacen de Novacraft un lugar único para jugar.</p>
-            <div class="caracteristicas">
-                <div class="caracteristica">
-                    <h4>Minecraft Java y Bedrock</h4>
-                    <p>Disfruta de la experiencia en ambas versiones de Minecraft.</p>
-                </div>
-                <div class="caracteristica">
-                    <h4>Divertidos Modos de Juego</h4>
-                    <p>Explora diferentes modos de juego para una experiencia única.</p>
-                </div>
-                <div class="caracteristica">
-                    <h4>Eventos Semanales</h4>
-                    <p>Participa en eventos emocionantes cada semana.</p>
-                </div>
-                <div class="caracteristica">
-                    <h4>Comunidad Activa</h4>
-                    <p>Únete a una comunidad amigable y colaborativa.</p>
-                </div>
-            </div>
+        <nav class="nav-links" role="navigation" aria-label="Navegación principal">
+            <a href="#hero">Inicio</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#testimonios">Testimonios</a>
+            <a href="#precios">Precios</a>
+            <a href="#reclutamiento">Reclutamiento</a>
+        </nav>
+
+        <div class="nav-cta">
+            <a class="discord-btn small" href="#discord">Discord</a>
         </div>
-    </section>
 
-    <section class="ip-seccion">
-        <div class="contenedor">
-            <h3>Dirección IP del Servidor</h3>
-            <p>Conéctate a nuestro servidor utilizando la siguiente dirección IP:</p>
-            <div class="ip-contenedor">
-                <div class="ip-address-java">
-                    <h4>Minecraft Java:</h4>
-                    <p>mc.novacraft.com</p>
+        <button class="menu-btn" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <aside class="sidebar" id="sidebar">
+            <button class="close-btn" aria-label="Cerrar menú"> ✕ </button>
+            <nav class="sidebar-links">
+                <a href="#hero">Inicio</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#testimonios">Testimonios</a>
+                <a href="#precios">Precios</a>
+                <a href="#reclutamiento">Reclutamiento</a>
+                <a href="#discord" class="discord-btn">Discord</a>
+            </nav>
+        </aside>
+        <div id="overlay"></div>
+
+    </header>
+
+    <!-- CONTENIDO -->
+    <main id="main">
+
+        <!-- HERO -->
+        <section class="hero" id="hero">
+            <div class="hero__bg"></div>
+            <div class="hero__content">
+                <h1>Universe Hub</h1>
+                <p>Servicios profesionales y reclutamiento, en un solo lugar.</p>
+                <a class="cta" href="#servicios">Ver Servicios</a>
+            </div>
+        </section>
+
+        <div class="container">
+
+            <!-- SOBRE -->
+            <section id="sobre">
+                <h2 class="section-title">Sobre Nosotros</h2>
+                <p class="center muted">
+                    Universe Hub conecta talento con proyectos reales: scripting, diseño, modelado 3D, marketing y soporte.
+                    Priorizamos calidad, tiempos de entrega y comunicación clara.
+                </p>
+            </section>
+
+            <!-- SERVICIOS -->
+            <section id="servicios">
+                <h2 class="section-title">Servicios Disponibles</h2>
+
+                <div class="cards">
+                    <article class="card">
+                        <h3>Scripter</h3>
+                        <ul>
+                            <li>Lua / Roblox</li>
+                            <li>C# / Unity</li>
+                            <li>JavaScript / Python</li>
+                        </ul>
+                    </article>
+
+                    <article class="card">
+                        <h3>Builder</h3>
+                        <ul>
+                            <li>World Design</li>
+                            <li>Arquitectura</li>
+                            <li>Detailing</li>
+                        </ul>
+                    </article>
+
+                    <article class="card">
+                        <h3>Modelador 3D</h3>
+                        <ul>
+                            <li>Texturizado</li>
+                            <li>Hard Surface</li>
+                            <li>Rigging / Animación</li>
+                        </ul>
+                    </article>
+
+                    <article class="card">
+                        <h3>Diseño</h3>
+                        <ul>
+                            <li>UI/UX</li>
+                            <li>Motion</li>
+                            <li>Ilustración</li>
+                        </ul>
+                    </article>
+
+                    <article class="card">
+                        <h3>Marketing</h3>
+                        <ul>
+                            <li>Copywriting</li>
+                            <li>Edición</li>
+                            <li>Gestión de campañas</li>
+                        </ul>
+                    </article>
+
+                    <article class="card">
+                        <h3>Técnico</h3>
+                        <p>Soporte y mantenimiento profesional.</p>
+                    </article>
                 </div>
-                <div class="ip-address-bedrock">
-                    <h4>Minecraft Bedrock:</h4>
-                    <p>bedrock.novacraft.com</p>
-                    <p>Puerto: 19132</p>
+            </section>
+
+            <!-- TESTIMONIOS -->
+            <section id="testimonios">
+                <h2 class="section-title">Testimonios</h2>
+
+                <div class="cards">
+                    <div class="card testimonial">
+                        <p>“La calidad del equipo es excepcional. Cumplieron todo a tiempo.”</p>
+                        <b>— Cliente Premium</b>
+                    </div>
+
+                    <div class="card testimonial">
+                        <p>“Excelente atención, volveré a contratar sus servicios.”</p>
+                        <b>— Empresa XYZ</b>
+                    </div>
+
+                    <div class="card testimonial">
+                        <p>“Universe Hub destaca por su profesionalismo.”</p>
+                        <b>— Startup Nova</b>
+                    </div>
                 </div>
-            </div>
+            </section>
+
+            <!-- PRECIOS -->
+            <section id="precios">
+                <h2 class="section-title">Planes & Precios</h2>
+
+                <div class="cards">
+                    <div class="card price">
+                        <h3>Starter</h3>
+                        <p>Desde $10</p>
+                    </div>
+                    <div class="card price">
+                        <h3>Pro</h3>
+                        <p>Desde $25</p>
+                    </div>
+                    <div class="card price">
+                        <h3>Premium</h3>
+                        <p>Desde $50</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RECLUTAMIENTO -->
+            <section id="reclutamiento">
+                <h2 class="section-title">Reclutamiento</h2>
+                <p class="muted">Forma parte de nuestro equipo y gana el <b>60%</b> de tus contratos.</p>
+                <a class="discord-btn" href="#discord">Postular</a>
+            </section>
+
         </div>
-    </section>
 
-    <section class="faq">
-        <div class="pregunta">
-            <button class="faq-btn">
-                ¿Cómo puedo unirme al servidor?
-            </button>
-            <div class="faq-content">
-                <p>Puedes unirte al servidor utilizando la dirección IP proporcionada en nuestro sitio web.</p>
+        <!-- FOOTER -->
+        <footer>
+            <div class="socials">
+                <a href="#discord">Discord</a>
+                <a href="#twitter">Twitter</a>
+                <a href="#youtube">YouTube</a>
             </div>
-        </div>
-        <div class="pregunta">
-            <button class="faq-btn">
-                ¿Qué versiones de Minecraft son compatibles?
-            </button>
-            <div class="faq-content">
-                <p>Nuestro servidor es compatible con Minecraft Java y Bedrock.</p>
-            </div>
-        </div>
-        <div class="pregunta">
-            <button class="faq-btn">
-                ¿Hay reglas específicas para los jugadores?
-            </button>
-            <div class="faq-content">
-                <p>Sí, tenemos reglas para garantizar una experiencia agradable para todos. Próximamente en la web.</p>
-            </div>
-        </div>
-    </section>
-  </main>
+            <p>Universe Hub © 2025 — Todos los derechos reservados</p>
+        </footer>
 
-    <footer>
-        <p>&copy; 2025 novacraft</p>
-        <p>Made by ObsiTech</p>
-    </footer>
+    </main>
 
-    <script>
-        document.querySelectorAll(".faq-btn").forEach(btn => {
-            btn.addEventListener("click", () => {
-                const content = btn.nextElementSibling;
+    <!-- Script -->
+    <script src="index.js"></script>
 
-                btn.classList.toggle("active");
-
-                if (btn.classList.contains("active")) {
-                    content.style.maxHeight = content.scrollHeight + "px";
-                    content.style.padding = "1rem";
-                } else {
-                    content.style.maxHeight = "0";
-                    content.style.padding = "0 1rem";
-                }
-            });
-        });
-    </script>
 </body>
 </html>

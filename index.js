@@ -8,48 +8,46 @@ document.addEventListener("DOMContentLoaded", () => {
     const ctx = canvas.getContext("2d");
 
     function resizeCanvas() {
-        const ratio = window.devicePixelRatio || 1;
-        canvas.width = window.innerWidth * ratio;
-        canvas.height = window.innerHeight * ratio;
-        ctx.scale(ratio, ratio);
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
     }
+
     resizeCanvas();
+
     window.addEventListener("resize", resizeCanvas);
 
-    const particles = [];
-    const TOTAL = 75;
+    // Generar estrellas
+    const stars = [];
+    const numStars = 150;
 
-    for (let i = 0; i < TOTAL; i++) {
-        particles.push({
-            x: Math.random() * window.innerWidth,
-            y: Math.random() * window.innerHeight,
-            size: 1 + Math.random() * 2,
-            speed: 0.2 + Math.random() * 0.6
+    for (let i = 0; i < numStars; i++) {
+        stars.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            size: Math.random() * 2,
+            speed: Math.random() * 0.5 + 0.2
         });
     }
 
-    function animateParticles() {
-        ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        particles.forEach(p => {
-            p.y -= p.speed;
+        stars.forEach(star => {
+            ctx.fillStyle = "white";
+            ctx.fillRect(star.x, star.y, star.size, star.size);
 
-            if (p.y < 0) {
-                p.y = window.innerHeight;
-                p.x = Math.random() * window.innerWidth;
+            star.y += star.speed;
+
+            if (star.y > canvas.height) {
+                star.y = 0;
+                star.x = Math.random() * canvas.width;
             }
-
-            ctx.fillStyle = "rgba(255,255,255,0.7)";
-            ctx.fillRect(p.x, p.y, p.size, p.size);
         });
 
-        requestAnimationFrame(animateParticles);
+        requestAnimationFrame(animate);
     }
 
-    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        animateParticles();
-    }
-
+    animate();
 
     /* =========================================================
        HERO PARALLAX (corregido)
@@ -107,6 +105,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 opacity: 0,
                 y: 30,
                 duration: 0.7
+            });
+        });
+
+        gsap.utils.toArray("section").forEach(sec => {
+            gsap.from(sec, {
+                opacity: 0,
+                y: 50,
+                duration: 0.8,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: sec,
+                    start: "top 85%",
+                }
             });
         });
 
